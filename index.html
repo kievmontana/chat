@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Chat</title>
+</head>
+<body>
+
+<div class="container my-4">
+    <h1 class="my-4 text-center">Chat</h1>
+
+    <div class="chat-rooms mb-3 text-center">
+        <div class="my-2">Choose a chat room:</div>
+        <button id="general" class="btn">#general</button>
+        <button id="gaming" class="btn">#gaming</button>
+        <button id="music" class="btn">#music</button>
+        <button id="programming" class="btn">#programming</button>
+    </div>
+
+    <div class="chat-window">
+        <ul class="chat-list list-group"></ul>
+    </div>
+
+    <form class="new-chat my-3">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text">Your message:</div>
+            </div>
+            <input type="text" id="message" class="form-control" required>
+            <div class="input-group-append">
+                <input type="submit" class="btn" value="send">
+            </div>
+        </div>
+    </form>
+
+    <form class="new-name my-3">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text">Update name:</div>
+            </div>
+
+            <input type="text" id="name" class="form-control" required>
+            <div class="input-group-append">
+                <input type="submit" class="btn" value="update">
+            </div>
+        </div>
+        <div class="update-mssg"></div>
+    </form>
+
+</div>
+
+<script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyBebq-V7daH-PhZV820t4wLlpvXAxH0bDk",
+        authDomain: "modern-js-learning.firebaseapp.com",
+        databaseURL: "https://modern-js-learning.firebaseio.com",
+        projectId: "modern-js-learning",
+        storageBucket: "modern-js-learning.appspot.com",
+        messagingSenderId: "627955976286",
+        appId: "1:627955976286:web:826f162b43fcaadf"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // Init DataBase
+    const db = firebase.firestore();
+</script>
+
+<script src="scripts/chat.js"></script>
+<script src="scripts/ui.js"></script>
+<script src="scripts/app.js"></script>
+</body>
+</html>
